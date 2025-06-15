@@ -1,14 +1,13 @@
 {
-  "name": "Imagebot",
+  "name": "ImageBot",
   "version": "1.0.0",
   "description": "A Discord bot that generates images from text prompts.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "discord.js": "^14.11.0",
-    "dotenv": "^16.3.1"
+    "express": "^4.18.2"
   }
 }
