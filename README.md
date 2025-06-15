@@ -1,94 +1,77 @@
 ```markdown
-# 🖼️ Image Bot
+# 🎨 Image Bot
 
-Image Bot is a sleek, interactive Discord bot that transforms your words into vivid AI-generated images. With a global `/image` command and intuitive buttons, users can create, refresh, and explore visuals—no branding, no fuss.
-
----
-
-## 🔧 Requirements
-
-- Node.js v16.9.0 or later
-- A Discord application with a bot token and client ID  
-  [Create one here](https://discord.com/developers/applications)
+**Image Bot** is your personal imagination machine on Discord. Type what you see in your mind—Image Bot renders it in pixels. Fast, clean, and stylish. No logos, no fuss. Just text-to-image magic on demand.
 
 ---
 
-## 🚀 Setup
+## ⚡ What It Does
 
-### 1. Clone & Install
+- 💬 `/image` — Describe anything. Watch it appear.
+- 🔁 **Redo** — Roll the dice again, new image, same prompt.
+- 🎨 **Like Variations** — Get alternate artistic takes.
+- ❌ **Delete** — Clean up after yourself.
+
+---
+
+## 🚀 Getting Started
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Add your bot token and client ID to `.env`:
+
+   ```
+   DISCORD_TOKEN=your-bot-token
+   CLIENT_ID=your-application-id
+   ```
+
+3. Launch the bot:
+
+   ```bash
+   node index.js
+   ```
+
+Image Bot will globally register `/image`—accessible in any server it's invited to.
+
+---
+
+## ✨ Example
 
 ```bash
-git clone https://github.com/yourusername/image-bot.git
-cd image-bot
-npm install
+/image prompt: a haunted floating castle surrounded by purple fog and lightning
 ```
 
-### 2. Configure Environment
-
-Upload or create a `.env` file in the root directory:
-
-```
-DISCORD_TOKEN=your-bot-token-here
-CLIENT_ID=your-application-id-here
-```
-
-Your `.env` file stores sensitive credentials and is automatically ignored from version control.
-
-### 3. Run the Bot
-
-```bash
-node index.js
-```
-
-Once started, the bot will globally register the `/image` command. This may take up to 1 hour to appear.
+🖼️ Boom. The image appears. Tap the buttons to explore variants or try again.
 
 ---
 
-## ✨ Features
-
-- `/image` — Type a prompt like  
-  `/image prompt: a floating island in the sky with waterfalls and dragons`
-
-- **Buttons:**
-  - 🔁 Redo — New image, fresh seed, same idea
-  - 🎨 Like Variations — Artistic twists of the same concept
-  - ❌ Delete — Instantly removes the message
-
-- Global slash command access — no manual server setup required
-- Images contain no watermark or source attribution
-- Lightweight, fast interaction using ephemeral Discord components
-
----
-
-## 📄 File Structure
+## 🧰 File Structure
 
 ```
 image-bot/
-├── index.js       # Main bot logic
-├── .env           # Environment variables (excluded from repo)
-├── package.json
-└── README.md
+├── index.js        → main bot logic
+├── .env            → keep your secrets here
+├── package.json    → dependencies + metadata
+└── README.md       → you're reading it
 ```
 
 ---
 
-## 🧠 Tips
+## 🔒 Privacy
 
-- Only text prompts are required—no config or tokens for the image API
-- Each generation is seeded for uniqueness
-- Modify `/image` in code if you want to rename or localize the command
-- Supports all Discord-hosted slash commands and modern UI elements
+No user data is stored. No logs. Nothing tracked. You think it, you see it, it's gone.
 
 ---
 
-## 📜 License
+## 🪪 License
 
-This project is released under the [MIT License](LICENSE).
-
----
-```
-
-This README assumes the `.env` and `index.js` are already present and functional. It’s structured for public visibility, GitHub clarity, and technical accuracy. Drop it in your repo and you’re good to go. Let me know if you want a deploy badge or repository summary line added.  
-```markdown
-👉 Ready to create and remix visuals with a single command.
+MIT License
 ```  
+
+Edgy, clean, and built to impress. You’re not launching a bot—you’re launching a vibe. Drop this in your repo and it’ll speak for itself.  
+Ready when you are to take it even further.  
+```
