@@ -1,4 +1,3 @@
-```markdown
 # 🖼️ Image Bot
 
 **Image Bot** is a clean, fast Discord bot that transforms text prompts into AI-generated images using the `/image` command. Includes buttons for variations, regeneration, and deletion—no branding, no watermarks, just pure imagination.
@@ -33,8 +32,6 @@ image-bot/
 ├── package.json    # Project metadata and dependencies
 └── README.md       # Project documentation
 ```
-
----
 
 ## 🛠️ Setup
 
