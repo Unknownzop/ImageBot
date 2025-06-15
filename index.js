@@ -1,50 +1,47 @@
+require('dotenv').config();
 const express = require('express');
-const { 
-  Client, 
-  GatewayIntentBits, 
-  REST, 
-  Routes, 
-  SlashCommandBuilder, 
-  EmbedBuilder, 
-  ActionRowBuilder, 
-  ButtonBuilder, 
-  ButtonStyle 
+const {
+  Client,
+  GatewayIntentBits,
+  REST,
+  Routes,
+  SlashCommandBuilder,
+  EmbedBuilder,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle
 } = require('discord.js');
-
-const DISCORD_TOKEN = 'your-bot-token-here';
-const CLIENT_ID = 'your-application-id-here';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-// Register global slash command
 const commands = [
   new SlashCommandBuilder()
     .setName('image')
-    .setDescription('Generate an image from a text prompt')
+    .setDescription('Generate an image from a prompt')
     .addStringOption(option =>
       option.setName('prompt')
-        .setDescription('Describe the image you want')
+        .setDescription('What do you want to see?')
         .setRequired(true))
 ].map(cmd => cmd.toJSON());
 
-const rest = new REST({ version: '10' }).setToken(DISCORD_TOKEN);
+const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
 (async () => {
   try {
     await rest.put(
-      Routes.applicationCommands(CLIENT_ID),
+      Routes.applicationCommands(process.env.CLIENT_ID),
       { body: commands }
     );
     console.log('✅ Slash command registered globally');
   } catch (err) {
-    console.error('❌ Error registering slash command:', err);
+    console.error('❌ Error registering commands:', err);
   }
 })();
 
 client.on('interactionCreate', async interaction => {
   if (interaction.isChatInputCommand() && interaction.commandName === 'image') {
     const prompt = interaction.options.getString('prompt');
-    const seed = Math.floor(Math.random() * 1000000);
+    const seed = Math.floor(Math.random() * 1_000_000);
     const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?nologo=true&seed=${seed}`;
 
     const embed = new EmbedBuilder()
@@ -68,9 +65,9 @@ client.on('interactionCreate', async interaction => {
     }
 
     const [action, prompt] = interaction.customId.split('|');
-    const seed = Math.floor(Math.random() * 1000000);
-    const modifiedPrompt = action === 'variation' ? `${prompt}, variation` : prompt;
-    const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(modifiedPrompt)}?nologo=true&seed=${seed}`;
+    const seed = Math.floor(Math.random() * 1_000_000);
+    const newPrompt = action === 'variation' ? `${prompt}, variation` : prompt;
+    const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(newPrompt)}?nologo=true&seed=${seed}`;
 
     const embed = new EmbedBuilder()
       .setTitle('🖼️ New Image')
@@ -92,9 +89,9 @@ client.once('ready', () => {
   console.log(`🤖 Logged in as ${client.user.tag}`);
 });
 
-client.login(DISCORD_TOKEN);
+client.login(process.env.DISCORD_TOKEN);
 
-// Express server to keep app alive
+// 🟢 Keep alive server
 const app = express();
-app.get('/', (_, res) => res.send('Image Bot is running.'));
-app.listen(3000, () => console.log('🌐 Web server running on port 3000'));
+app.get('/', (_, res) => res.send('Image Bot is alive'));
+app.listen(3000, () => console.log('🌐 Express server running on port 3000'));
