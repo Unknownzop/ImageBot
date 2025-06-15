@@ -1,77 +1,94 @@
 ```markdown
-# 🎨 Image Bot
+# 🖼️ Image Bot
 
-**Image Bot** is your personal imagination machine on Discord. Type what you see in your mind—Image Bot renders it in pixels. Fast, clean, and stylish. No logos, no fuss. Just text-to-image magic on demand.
-
----
-
-## ⚡ What It Does
-
-- 💬 `/image` — Describe anything. Watch it appear.
-- 🔁 **Redo** — Roll the dice again, new image, same prompt.
-- 🎨 **Like Variations** — Get alternate artistic takes.
-- ❌ **Delete** — Clean up after yourself.
+**Image Bot** is a clean, fast Discord bot that transforms text prompts into AI-generated images using the `/image` command. Includes buttons for variations, regeneration, and deletion—no branding, no watermarks, just pure imagination.
 
 ---
 
-## 🚀 Getting Started
+## ✨ Features
 
-1. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-2. Add your bot token and client ID to `.env`:
-
-   ```
-   DISCORD_TOKEN=your-bot-token
-   CLIENT_ID=your-application-id
-   ```
-
-3. Launch the bot:
-
-   ```bash
-   node index.js
-   ```
-
-Image Bot will globally register `/image`—accessible in any server it's invited to.
+- `/image` — Generate an image from any prompt
+- 🔁 Redo — Regenerate new image using a fresh seed
+- 🎨 Like Variations — Artistic reinterpretations with slight prompt tweaks
+- ❌ Delete — Instantly remove the message
+- Global slash command — Works in any server
+- No image branding or attribution
 
 ---
 
-## ✨ Example
+## ⚙️ Requirements
 
-```bash
-/image prompt: a haunted floating castle surrounded by purple fog and lightning
-```
-
-🖼️ Boom. The image appears. Tap the buttons to explore variants or try again.
+- Node.js v16.9.0 or higher
+- Discord application with bot token and client ID  
+  [Create on Developer Portal](https://discord.com/developers/applications)
 
 ---
 
-## 🧰 File Structure
+## 📂 Project Structure
 
 ```
 image-bot/
-├── index.js        → main bot logic
-├── .env            → keep your secrets here
-├── package.json    → dependencies + metadata
-└── README.md       → you're reading it
+├── index.js        # Bot logic
+├── .env            # Environment variables (not committed)
+├── package.json    # Project metadata and dependencies
+└── README.md       # Project documentation
 ```
+
+---
+
+## 🛠️ Setup
+
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/yourusername/image-bot.git
+cd image-bot
+npm install
+```
+
+### 2. Create `.env`
+
+Place a `.env` file in the root directory:
+
+```env
+DISCORD_TOKEN=your-bot-token
+CLIENT_ID=your-client-id
+```
+
+### 3. Run the Bot
+
+```bash
+node index.js
+```
+
+---
+
+## 💬 Usage
+
+Invite the bot to your server and use the slash command:
+
+```
+/image prompt: an astronaut surfing a solar flare through deep space
+```
+
+After generation, the bot provides buttons to:
+
+- 🔁 Redo — Generate a fresh image of the same prompt
+- 🎨 Like Variations — Slightly remix the prompt for creative twists
+- ❌ Delete — Remove the generated message
 
 ---
 
 ## 🔒 Privacy
 
-No user data is stored. No logs. Nothing tracked. You think it, you see it, it's gone.
+This bot stores no data, logs no prompts, and tracks nothing. Prompts are used once and discarded. Everything runs client-side in Discord’s interface.
 
 ---
 
-## 🪪 License
+## 📄 License
 
 MIT License
 ```  
 
-Edgy, clean, and built to impress. You’re not launching a bot—you’re launching a vibe. Drop this in your repo and it’ll speak for itself.  
-Ready when you are to take it even further.  
+Let me know when you're ready to style it further with shields, deploy buttons, or badges.
 ```
