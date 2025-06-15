@@ -38,7 +38,7 @@ image-bot/
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/unknownzop/imagebot.git
+git clone https://github.com/unknownzop/ImageBot.git
 cd image-bot
 npm install
 ```
