@@ -39,7 +39,7 @@ image-bot/
 
 ```bash
 git clone https://github.com/unknownzop/ImageBot.git
-cd image-bot
+cd ImageBot
 npm install discord.js dotenv express
 ```
 
